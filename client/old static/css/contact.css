@@ -1,0 +1,325 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html{
+    width: 100% !important;
+    overflow-x: hidden;
+}
+
+body{
+    /* background:url("/public/pics/001.jpg"); */
+    height: auto;
+    background-color:white;
+}
+.first-row{
+    /* border: 1px solid black; */
+    position:relative;
+    width:94%;
+    margin-left:3%;
+    margin-right:3%;
+    margin-top: 20px;
+    height:1900px;
+    background-color:white;
+}
+.List-img1{
+    margin-top: 20px;
+    position: absolute;
+    /* border: 1px solid black; */
+    height:250px;
+    padding: 10px;
+   width: 100%;
+}
+.List-img1 .pic{
+    position: relative;
+   max-width:32%;
+    height: 240px;
+    display: inline-block;
+    margin-left: 10px;
+}
+.pic img{
+    display: block;
+    position: relative;
+    max-width:100%;
+    height:220px;
+}
+.List-img2{
+    padding: 10px;
+    height:250px;
+    width:100%;
+    position: absolute;
+    top:370px;
+    display: block;
+}
+.pic1{
+    position: relative;
+    width: 32%;
+    margin-left: 10px;
+    display: inline-block;
+}
+.pic1 img{
+max-width:100%;
+height:220px;
+position: relative;
+display: block;
+}
+.List-img3{
+    position: absolute;
+    width:100%;
+    top:670px;
+    padding: 10px;
+    height:240px;
+}
+.List-img3 .pic2{
+    display:inline-block;
+    width:32%;
+    position: relative;
+    margin-left: 10px;
+}
+.pic2 img{
+    display: block;
+   max-width:100%;
+    height:220px;
+
+}
+#next,#prev{
+    top:950px;
+    right:20px;
+    font-weight:400;
+    
+    position: absolute;
+    
+}
+#prev{
+    left:20px;
+}
+#prev button{
+    font-size: 20px;
+    border: 0px;
+    background-color: white;
+    color:rgba(146, 62, 41,0.9);
+}
+#prev button:hover{
+    color:rgba(146, 62, 41,1);
+    text-decoration: underline;
+}
+#next button{
+    font-size: 20px;
+    border: 0px;
+    background-color: white;
+    color:rgba(146, 62, 41,0.9);
+}
+#next button:hover{
+    color:rgba(146, 62, 41,1);
+    text-decoration: underline;
+}
+.first-row h2{
+    font-size: 26px;
+    padding-top: 10px;
+    padding-left:20px;
+    text-align: center;
+    font-weight: bolder;
+    color: rgb(146, 62, 41);
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.first-row h1{
+ 
+    padding-top: 20px;
+    text-align: center;
+    font-weight: bolder;
+    color: rgb(146, 62, 41);
+     font-family:Comic Sans MS, cursive, sans-serif;
+}
+
+.img-whole1{
+    position: absolute;
+    width:100%;
+    top:100px;
+    left:3.5%;
+    right:4%;
+}
+
+.img-whole1 .img{
+    display:inline-block;
+    width:46%;
+    padding:5px;
+    
+  position: relative;
+  
+   margin:10px 5px 10px 0px;
+}
+.tobe{
+    visibility: hidden;
+    width: 120px;
+    background-color: white;
+    color:black;
+    text-align: center;
+    border:1px solid grey;
+    padding: 0px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: -100%;
+    left: 50%;
+    margin-left: -60px;
+}
+.img a:hover .tobe{
+    visibility: visible;
+}
+.img a{
+    position: relative;
+}
+.img a:hover{
+   opacity:0.9;
+}
+.img a{
+    transition: 1s all ;
+}
+@keyframes mine{
+    from
+    {
+        opacity:0;
+    }
+to {
+    opacity: 1;
+}
+}
+.img img:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ 
+}
+.img img{
+    width:100%;
+    animation-name: mine;
+    animation-duration: 2s;
+    height:270px;
+}
+.img #img{
+    animation-name: mine;
+    animation-duration: 2s;
+}
+.img .desc{
+text-align: center;
+font-weight: bold;
+font-family: "Arial Black", Gadget, sans-serif;
+}
+#btn{
+    position: absolute;
+   top:800px;
+    right:-200px;
+    font-size: 24px;
+    width:100%;
+    text-align: center;
+    
+   
+}
+#btn a{
+    /* make underline before and after it */
+float:right;
+color:rgba(146, 62, 41,0.7);
+font-family: "Comic Sans MS", cursive, sans-serif;
+width:50%;
+transition: 0.5s all ease;
+}
+#btn a:hover{
+    color:rgba(146, 62, 41,1);
+}
+
+.second-row{
+    position: relative;
+    top:800px;
+   
+}
+.second-row h1{
+    text-align: center;
+    font-weight: bolder;
+    color: rgb(146, 62, 41);
+     font-family:Comic Sans MS, cursive, sans-serif;
+}
+.img-whole2{
+    position: absolute;
+    width:100%;
+    top:100px;
+    left:3.5%;
+    right:4%;
+}
+.img-whole2 .img1{
+    display:inline-block;
+    width:31%;
+    padding:5px;
+    
+  
+  
+   margin:10px 5px 10px 0px;
+}
+/* #img0{
+    width:33px;
+    height:33px;
+    position:absolute;
+    left:45%;
+    top:50%;
+}*/
+ img:hover{
+    opacity:0.9;
+ }
+ .img1 a{
+     transition: 1s all ;
+ }
+img:hover{
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ 
+ }
+ @keyframes mine2{
+     0%{
+         opacity: 0.7;
+     }
+     50%{
+         opacity: 0.8;
+     }
+     70%{
+         opacity: 0.9;
+     }
+     100%{
+         opacity: 1;
+     }
+ }
+img{
+    width:100%;
+     animation-name: mine2;
+     animation-duration: 4s;
+}
+ .desc{
+     color:rgba(11, 22, 41,0.8);
+text-align: center;
+font-weight: bold;
+font-family: "Arial Black", Gadget, sans-serif;
+}
+#btnn{
+    position: absolute;
+    top:400px;
+    right:-200px;
+    font-size: 24px;
+    width:100%;
+    text-align: center;
+   
+}
+#btnn a{
+    /* make underline before and after it */
+float:right;
+color:rgba(146, 62, 41,0.7);
+font-family: "Comic Sans MS", cursive, sans-serif;
+width:50%;
+transition: 0.5s all ease;
+}
+#btnn a:hover{
+    color:rgba(146, 62, 41,1);
+}
+.third-row{
+    position: relative;
+    top:1200px;
+  
+}
+@media only screen and (max-width:)

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="/public/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet"  media="all" href="/public/css/main.css">
+	
+
+	<link rel="stylesheet" type="text/css" media="only screen and (max-width: 991px)" href="/public/css/lessthan991.css" />
+	<link rel="stylesheet" type="text/css" media="only screen and (max-width: 767px)" href="/public/css/lessthan767.css" />
+	<script src="/public/jquery/jquery.js"></script>
+	<script src="/public/jquery/jquery.min.js"></script>
+	<script src="/public/bootstrap/js/bootstrap.js"></script>
+	<script src="/public/bootstrap/js/bootstrap.min.js"></script>
+	
+	<script src="/public/js/main.js"></script>
+	
+	
+	<title>
+		Admin page
+	</title>
+	<style>
+	
+	</style>
+</head>
+<body>
+<header>
+    <h1>NMT House Rental and Purchase</h1>
+</header>
+<div class="flex-container">
+    <div id="flex-item">
+    <div class="second-flex-item">  
+    <img src="/public/pics/me.png">
+    <!-- <div id="head">Admin Login</div> -->
+    <form id="login-form" action="/login" name="myForm" onsubmit="return(validate());" method="POST">
+           <input type="text" placeholder="User name" name="uname" required>
+		   <h6 id="err"></h6>
+		    <input type="password" placeholder="Password" name="pwd" required>
+			<h6 id="errP"></h6> <input type="checkbox" value="yes" name="savePwd"><span id="remember">Remember Me</span>
+           
+          <br><button type="submit">Login</button>
+           <!-- <input type="submit" value="Login" id="login"> -->
+        </form>
+        <a href="/public/loggedin.html">Forgot your password?</a>
+    </div>
+</div>
+</div>
+
+
+
+<script>
+    // document.getElementsByTagName('body').innerHTML="done for you";
+	
+ function validate(){
+	const userName=document.myForm.uname.value;
+	const password=document.myForm.pwd.value;
+	const sizeName=userName.length;
+	const sizePassword=password.length;
+	const matchName= /[^a-zA-Z]/ig;
+	const matchPwd=/(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?!.*[^a-zA-Z0-9])/g;
+	const tstName=matchName.test(userName);
+	const tstPwd=matchPwd.test(password);
+
+	if(tstName===true){
+		document.getElementById("err").innerHTML="invalid character";
+	    document.myForm.uname.focus(); 
+		return false;
+	}
+	if(sizeName<6){
+		document.getElementById("err").innerHTML="User name too short,"+"<br>"+" must be greater than 6 and less than 20!";
+		document.myForm.uname.focus(); 
+		return false;
+	}
+	else if(sizeName>20){
+		document.getElementById("err").innerHTML="User name too long,"+"<br>"+" must be less than 20 and greater than 6!";
+		document.myForm.uname.focus(); 
+		return false;
+	}
+	
+	if(tstPwd===false){
+		document.getElementById("errP").innerHTML="invalid password, must contain only small letter,<br>capital letter and number!";
+	    document.myForm.pwd.focus(); 
+		return false;
+	}
+	if(sizePassword<8){
+		document.getElementById("errP").innerHTML="Password too short,"+"<br>"+"must be greater than 8 and less than 20.";
+	    document.myForm.pwd.focus(); 
+		return false;
+	}
+	else if(sizePassword>20){
+		document.getElementById("errP").innerHTML="Password too long,"+"<br>"+"must be less than 20 and greater than 8.";
+	    document.myForm.pwd.focus(); 
+		return false;
+	}
+	}
+	</script>
+</body>
+</html>
+
+<!--  profile.html
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="/public/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet"  media="all" href="/public/css/loggedin.css">
+	
+
+	<link rel="stylesheet" type="text/css" media="only screen and (max-width: 991px)" href="/public/css/lessthan991.css" />
+	<link rel="stylesheet" type="text/css" media="only screen and (max-width: 767px)" href="/public/css/lessthan767.css" />
+	<script src="/public/jquery/jquery.js"></script>
+	<script src="/public/jquery/jquery.min.js"></script>
+	<script src="/public/bootstrap/js/bootstrap.js"></script>
+	<script src="/public/bootstrap/js/bootstrap.min.js"></script>
+	
+	<script src="/public/js/main.js"></script>
+	
+	
+	<title>
+		Admin page
+	</title>
+	<style>
+	body{
+  background:url("/public/pics/047.jpg");
+  /* background:whitesmoke; */
+    }
+	</style>
+</head>
+<body onload="hide()" background="">
+<header style="padding-left: 0px;">
+  <div id="header-1">  <h1>NMT House Rental and Purchase</h1></div>
+    <div id="profile"><span id="arrow-dwn"><img src="/public/pics/profile.png" id="person"><img src="/public/pics/ar.png"></span>
+        <span id="arrow-up"><img src="/public/pics/profile.png" id="person"><img src="/public/pics/ar1.png" ></span></div>
+   <div id="contents">
+       <ul>
+           <li><a href="/public/profile.html">Profile</a></li>
+           <li><a href="/public/index.html">Sign out</a></li>
+           
+       </ul>
+   </div>
+</header>
+<div class="flex-container2">
+    <div class="flex-itemProfile">
+         <h3>Administrator</h3>
+      <form id="profileInfo" action="/jjj" name="myForm" onsubmit="return(validate());" method="POST">
+          <table id="bigTable">
+              <th></th>
+              <tr>
+                  <td> User name: </td>
+                  <td><input type="text" name="uname" value="mahtot"></td>
+              </tr>
+              <tr>
+                  <td> Email: </td>
+                  <td> <input type="email" name="email" value="mahtotgher13@gmail.com"></td>
+              </tr>
+              <tr>
+                  <td>   Current password: </td>
+             <td> <input type="password" name="oldPwd"></td>
+             <h6 id="errCp">kk</h6>
+
+            </tr>
+                <tr> <td>New password:</td>
+                <td>  <input type="password" name="newPwd"></td>
+                <h6 id="errNp"></h6>
+    
+            </tr>
+                <tr>
+                    <td>Confirm new password:</td>
+                    <td>  <input type="password" name="confirmNewPwd"></td>
+                    <h6 id="errCnp"></h6>
+
+                </tr>
+           
+          </table>
+        </form>
+          <table id="smlTable">
+            <th></th>
+            <tr>
+                <td> User name: </td></tr>
+               <tr> <td><input type="text" name="uname" value="mahtot"></td>
+               </tr>
+            <tr>
+                <td> Email: </td></tr>
+               <tr> <td> <input type="email" name="email" value="mahtotgher13@gmail.com"></td>
+            </tr>
+            <tr>
+                <td>   Current password: </td></tr>
+          <tr><td> <input type="password" name="oldPwd"></td>
+              </tr>
+              <tr> <td>New password:</td></tr>
+             <tr><td>  <input type="password" name="newPwd"></td>
+              </tr>
+              <tr>
+                  <td>Confirm new password:</td></tr>
+                <tr><td>  <input type="password" name="confirmNewPwd"></td>
+              </tr>
+        </table>
+           <div id="profileBtn"> <button type="submit"><span id="btnU">Save changes</span></button>
+        <div id="cancel"><a href="/public/loggedin.html">Cancel</a>
+
+    </div>
+</div>
+<script>
+
+    $(document).ready(function(){
+        $("#contents").hide()
+        $("#arrow-up").hide();
+        $("#profile").click(function(){
+            $("#contents").toggle();
+            $("#arU").show();
+            $("#arD").hide();
+            $(".flex-container2").click(function(){
+                $("#contents").hide()
+                $("#arrow-up").hide();
+            $("#arrow-dwn").show();
+            })
+            $("#header-1").click(function(){
+                $("#contents").hide()
+                $("#arrow-up").hide();
+            $("#arrow-dwn").show();
+            })
+
+        })
+        $("#arrow-dwn").click(function(){
+            $("#arrow-up").show();
+            $("#arrow-dwn").hide();
+            $("#arrow-up").click(function(){
+            $("#arrow-up").hide();
+            $("#arrow-dwn").show();
+        })
+        })
+       
+    
+    function validate(){
+        const oldPwd=document.myForm.oldPwd.value;
+	    const newPwd=document.myForm.newPwd.value;
+        const confirmNewPwd=document.myForm.confirmNewPwd.value;
+        const matchPwd=/(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?!.*[^a-zA-Z0-9])/g;
+        const tstOldPwd=matchPwd.test(oldPwd);
+        const tstNewPwd=matchPwd.test(newPwd);
+        const tstConfirmNewPwdd=matchPwd.test(confirmNewPwd);
+        const sizeOldPwd=oldPwd.length;
+        const sizeNewPwd=newPWd.length;
+        const sizeConfirmNewPwd=confirmNewPwd.length;
+        alert("hello")
+        if(tstOldPwd===false){
+		   document.getElementById("errCp").innerHTML="invalid character";
+	       document.myForm.uname.focus(); 
+		   return false;
+          }
+        if(tstNewPwd===false){
+		   document.getElementById("errNp").innerHTML="invalid character";
+	       document.myForm.uname.focus(); 
+		   return false;
+           }
+        if(tstConfirmNewPwdd===false){
+		   document.getElementById("errCnp").innerHTML="invalid character";
+	       document.myForm.uname.focus(); 
+		   return false;
+	       }
+   }
+})
+</script>
+</body>
+</html> -->

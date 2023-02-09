@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./main.css">
+        
+    </head>
+    <body>
+        <a href="javascript:void 0">Do nothing.</a>
+     <script src="./main.js"></script>
+     <div id="feeling"></div>
+     [!CDATA[[<br>]]]
+     <br> [!CDATA[[<br>]]
+    </body>
+    
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="/public/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet"  media="all" href="/public/css/main.css">
+	
+
+	<link rel="stylesheet" type="text/css" media="only screen and (max-width: 991px)" href="/public/css/lessthan991.css" />
+	<link rel="stylesheet" type="text/css" media="only screen and (max-width: 767px)" href="/public/css/lessthan767.css" />
+	<script src="/public/jquery/jquery.js"></script>
+	<script src="/public/jquery/jquery.min.js"></script>
+	<script src="/public/bootstrap/js/bootstrap.js"></script>
+	<script src="/public/bootstrap/js/bootstrap.min.js"></script>
+	
+	<script src="/public/js/main.js"></script>
+	
+	
+	<title>
+		Admin page
+	</title>
+	<style>
+	
+	</style>
+</head>
+<body>
+<header>
+    <h1>NMT House Rental and Purchase</h1>
+</header>
+<div class="flex-container">
+    <div id="flex-item">
+    <div class="second-flex-item">  
+    <img src="/public/pics/me.png">
+    <!-- <div id="head">Admin Login</div> -->
+    <form id="login-form" action="/login" name="myForm" onsubmit="return(validate());" method="POST">
+           <input type="text" placeholder="User name" name="uname" required>
+		   <h6 id="err"></h6>
+		    <input type="password" placeholder="Password" name="pwd" required>
+			<h6 id="errP"></h6> <input type="checkbox" value="yes" name="savePwd"><span id="remember">Remember Me</span>
+           
+          <br><button type="submit">Login</button>
+           <!-- <input type="submit" value="Login" id="login"> -->
+        </form>
+        <a href="/public/loggedin.html">Forgot your password?</a>
+    </div>
+</div>
+</div>
+
+
+
+<script>
+	 document.getElementsByTagName('body').innerHTML="done for you";
+	
+	console.log("hello form page");
+	function validate(){
+		
+
+		// var p=document.myForm.pwd.value;
+		// const result= /(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?!.*[^a-zA-Z0-9])/.test(p);
+ // only letters and numbers
+	
+	// if( document.myForm.uname.value == "" )
+    //      {
+    //         alert( "Please provide your Email!" );
+    //         document.myForm.uname.focus() ;
+    //         return false;
+	// 	 }
+	
+	const p=document.myForm.uname.value;
+	const password=document.myForm.pwd.value;
+	const size_name=p.length;
+	const size_password=password.length;
+	if(size_name>10){
+       document.getElementById("err").innerHTML="Size too long must be less than 10!";
+	   document.myForm.uname.focus(); 
+	   return false;
+	}
+    else if(size_name<3){
+       document.getElementById("err").innerHTML="Size too small must be greater than 3!";
+	   document.myForm.uname.focus(); 
+	   return false;
+         }
+if(size_name>3 && size_name<10){
+	const re=/[^a-zA-Z]/g;
+	const result=re.test(p);
+	// /[A-Z]/.test(p) 
+	// &&/[0-9]/.test(p) 
+	// && /[a-z]/.test(p) 
+	// && !/[^a-zA-Z0-9]/.test(p); // only letters and numbers
+// alert(result)
+const result2=p.match(/[^!-\/:-@\[-`{-~ \-]/g)
+	const result1=p.match("--");
+
+	alert(result1);
+   if (result==true){
+	document.getElementById("err").innerHTML="invalid character";
+	document.myForm.uname.focus(); 
+    return false; 
+	 
+}
+else if(result==false && result1==true){
+	const rep=true;
+}
+else if(result1==false){
+	alert("No special charcter must be written!");
+	return false;
+}
+}
+if (size_password>8 && size_password<20){
+		const result2= /[A-Z]/.test(password) // at least one uppercase letter
+		&&/[0-9]/.test(password)// at least one number
+		&& /[a-z]/.test(password) // at least one lowercase letters
+		&&!/[^a-zA-Z0-9]/.test(password); // only letters and numbers
+if(result2==true){
+	const resp="true";
+}
+else{
+	document.getElementById("errP").innerHTML="invalid password, must contain only small letter,<br>capital letter and number!";
+	document.myForm.pwd.focus(); 
+		return false;
+}
+	}
+
+	else {
+		document.getElementById("errP").innerHTML="invalid password, must be greater than 8<br> and less than 20";
+	document.myForm.pwd.focus(); 
+		return false;
+
+	}
+if (rep==true && resp==true){
+	return true;
+}
+
+}
+	// re=/\w{3,}/ig;
+	// alert(re.test(input));
+		
+	</script>
+</body>
+</html>

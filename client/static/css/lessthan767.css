@@ -1,0 +1,466 @@
+html{
+    width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box;
+    
+}
+* {
+    box-sizing: border-box;
+     
+}
+
+body{
+    overflow-x: hidden; 
+    /* font-size: 13px; */
+    width: 100% !important;
+    /* height: auto !important; */
+   
+    margin: 0px !important;
+    padding: 0px !important;
+    min-width: 0;
+}
+header{
+  
+    width:100%;
+    position: fixed;
+    top:0;
+   
+    z-index: 1;
+    padding-bottom: 5px; 
+    height:130px;
+     background-color:white;
+   
+
+}
+header #company_name{
+float:left;
+margin: 0px 0 0 0;
+height: 75px;
+width:100%;
+padding: 0px 0;
+background-color: white;
+color:rgba(29, 31, 55,1);
+margin-bottom: 7px;
+border-bottom: 1px solid rgb(133, 127, 127);
+}
+nav{
+background-color:rgba(29, 31, 55,1) ;
+float:left;
+height:50px;
+margin:0;
+margin-top: 0px;
+width: 100%;
+padding-left: 0;
+}
+.main-parts{
+/* color:rgba(248, 238, 251,0.7); */
+color:rgba(29, 31, 55,1);
+padding: 10px 0px;
+float:left;
+left:0;
+font-weight: bolder;
+font-family: Verdana, Geneva, sans-serif;
+/* font-family: 'Yesteryear', cursive; */
+overflow: hidden;
+font-size: 60px;
+line-height: 30px;
+position: relative;
+display: inline-block;
+padding-left: 0px;
+margin-left: 30px;
+}
+#main-title{
+color:rgba(29, 31, 55,1);;
+
+font-size: 25px;
+padding: 0;
+margin: 0;
+
+}
+#sub-title{
+white-space: nowrap;
+font-size: 18px;
+}
+
+.menu::before,
+.menu::after {
+content: " ";
+display: table;
+}
+.menu::after {
+clear: both;
+}
+.menu>li{
+position: relative;
+float:left;
+}
+.menu > li + li {
+/* margin-left: 20px; */
+}
+.menu a{
+display: block;
+}
+.menu{
+font-family: 'Open Sans', sans-serif;
+font-size: 20px;
+line-height: 24px;
+font-weight: 300;
+margin-left: -20px;
+}
+.menu > li >  a,.dropdownn >a{
+color:rgba(248, 238, 251,0.7);
+padding: 10px;
+padding-top:10px;
+height: 50px;
+width:100px;
+text-align: center;
+/* border:1.54px solid red; */
+font-size: 16px;
+position: relative;
+top:0px;
+margin-left: 0;
+left:0px;
+}
+
+.menu > li >a:hover{
+transition: background-color 0.5s ease;
+color:white;
+text-decoration: none;
+background-color:rgb(30, 39, 53);
+}
+.dropdownn{
+    margin-top: 0;
+    padding: 0;
+    display: block;
+}
+
+.dropdown-contentt {
+    top:50px;
+    display: none;
+    position: absolute;
+    left:0px;
+    background-color:rgba(95, 95, 121, 0.6);
+    max-width: 100px;
+}
+.dropdown-contentt a{
+    
+    
+    color:rgba(248, 238, 251,0.7);
+    background-color:rgba(11, 22, 41,1);
+    padding: 6px 6px;
+    text-decoration: none;
+    display: block;
+    text-align:left;
+    border-bottom: 1px solid rgb(37, 41, 48);
+    font-size: 13px;
+    height: 40px;
+    
+}
+.dropdown-contentt a:hover {
+    background-color:rgb(30, 39, 53);
+    color:white;
+    transition: background-color 0.5s ease;
+
+}
+
+.dropdownn:hover .dropdown-contentt {
+    display:block;
+    margin-top: 0;
+}
+li.dropdownn{
+    display: inline-block;
+}
+#background{
+  
+    display:block;
+    background-size: cover;
+     height:300px;
+     margin-top:0px;
+     border-bottom-right-radius:10px ;
+     border-bottom-left-radius: 10px;
+     transition:background-image 0.5s ease-in; 
+}
+
+
+
+
+
+
+
+#alert h2{
+    font-size: 20px;
+}
+#alert p{
+    font-size:12px;
+}
+#alert a{
+    font-size:15px;
+}
+h2#lastTitle{
+    font-size:20px;
+}
+#thirdRow  h5,a{
+    font-size:15px;
+}
+ul.contactList li b{
+    font-size:15px;
+}
+
+ul.imgList{
+    margin-left:30%;
+    
+}
+  
+
+#fourthRow{
+    width:100%;
+    
+}
+h1#caption1{
+    padding-left: 0;
+    margin-left:50px;
+    font-size: 20px;
+}
+#back h1{
+    padding-left: 0px;
+    margin-top: 210px;
+    font-family: cursive;
+    
+}
+#small {
+    margin-top:105px;
+    align-self: center;
+  width:100%;
+    position: relative;
+    /* border:1px solid black; */
+    
+}
+ul.imgList{
+    margin-left:20%;
+    max-width:100%;
+}
+.pic-content{
+    margin: 0px;
+}
+#Spic1,#Spic2,#Spic3{
+    width:150px;
+    height:55px;
+    
+}
+ul.imgList li#smallPic3{
+    width:150px;
+    border-left: 1px solid white;
+    border-right:0 ; 
+}
+ul.imgList li{
+    display: inline;
+     background-color: grey;
+     
+  width:150px;
+     border-right: 1px solid white;
+    border-left: 0px solid whitesmoke;
+    transition: background-color 3s ease;
+    margin: 0;
+     
+}
+
+#thirdRow{
+ /* overflow-y: auto; */
+    line-height: 30pt;
+    height:670px;
+    color: whitesmoke;
+    margin-top: 30px;
+    padding-top: 10px;
+    background-color: rgba(29, 31, 55,0.8);
+    /* width:100%; */
+    
+}
+#forTabletA{
+    margin-top: 10px;
+    height:60px;
+    font-size: 20px;
+}
+
+#forTabletC{
+    margin-top:70px;
+    padding-top:80px;
+    height:200px;
+}
+
+#secondRow,#desc{
+    margin-left:10px;
+}
+#alert{
+    margin-left:5px;
+}
+#buy-house,#put-up,#rent-house{
+    width:80%;
+}
+#fourthRow{
+    width: auto;
+    height:40px;
+    color:rgb(239, 245, 251);
+    background-color: rgba(29, 31, 55,1);
+}
+#first-container{
+    margin-top:155px;
+    
+   
+
+}
+#secondRow a{
+    font-size: 14px;
+}
+@media only screen and (max-width:700px){
+    ul.imgList{
+        margin-left:20%;
+        max-width:100%;
+    }
+    #Spic1,#Spic2,#Spic3{
+        width:130px;
+        height:45px;
+    }
+
+    ul.imgList li{
+        display: inline;
+         background-color: grey;
+         
+      width:130px;
+         border-right: 1px solid white;
+        border-left: 0px solid whitesmoke;
+        transition: background-color 3s ease;
+        margin: 0;
+         
+    }
+    ul.imgList li#smallPic3{
+        width: 130px;
+    }
+}
+@media only screen and (max-width:630px){
+    ul.imgList{
+        margin-left:12%;
+        max-width:100%;
+    }
+    #Spic1,#Spic2,#Spic3{
+        width:110px;
+        height:45px;
+    }
+
+    ul.imgList li{
+        display: inline;
+         background-color: grey;
+         
+      width:110px;
+         border-right: 1px solid white;
+        border-left: 0px solid whitesmoke;
+        transition: background-color 3s ease;
+        margin: 0;
+         
+    }
+    ul.imgList li#smallPic3{
+        width: 110px;
+    }
+}
+@media only screen and (max-width:400px) {
+    h1#caption1{
+        padding-left: 0;
+        margin-left:40px;
+        animation-name: none;
+    }
+    #back h1{
+        padding-left: 0px;
+        margin-top: 210px;
+        font-family: cursive;
+        font-size:16px;
+    }
+  
+/* .dropdown-contentt {
+        margin-top:10px;
+        display: none;
+        position: absolute;
+        margin-left:5px;
+       width:50px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        height:40px;
+    } */
+    
+    /* .dropdown-contentt a{
+        
+        color:rgba(248, 238, 251,0.7);
+        background-color:rgba(29, 31, 55,0.9);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align:left;
+        border-bottom: 1px solid rgba(29, 31, 55,0.6);
+        font-size:5pt;
+        overflow: hidden;
+        height: 5px;
+    } */
+    #small {
+        margin-top:129px;
+        align-self: center;
+      width:100%;
+        position: relative;
+        border:1px solid black;
+        
+    }
+    ul.imgList{
+        margin-left:15%;
+        max-width:100%;
+    }
+    #Spic1,#Spic2,#Spic3{
+        width:80px;
+        height:25px;
+    }
+
+    ul.imgList li{
+        display: inline;
+         background-color: grey;
+         
+      width:80px;
+         border-right: 1px solid white;
+        border-left: 0px solid whitesmoke;
+        transition: background-color 3s ease;
+        margin: 0;
+         
+    }
+    ul.imgList li#smallPic3{
+        width: 80px;
+    }
+     
+    #alert h2{
+        font-size: 20px;
+    }
+    #alert p{
+        font-size:12px;
+    }
+    #alert a{
+        font-size:15px;
+    }
+    h2#lastTitle{
+        font-size:15px;
+    }
+    #thirdRow  h5,a{
+        font-size:10px;
+    }
+    ul.contactList li b{
+        font-size:10px;
+    }
+    #forTabletC h2,#forTabletA h2{
+  font-size: 15px;
+    }
+    #forTabletC ul li{
+        margin-left: 10px;
+    }
+    #last{
+        font-size: 10px;
+    }
+    #fourthRow{
+        font-size: 10px;
+        width: auto;
+        height:70px;
+        color:rgb(239, 245, 251);
+        background-color: rgba(29, 31, 55,1);
+    }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Birth Day Gift:(</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src=".jquery/jquery.js"></script>
+        <script src="./jquery/jquery.min.js"></script>
+        <style>
+           
+        </style>
+    </head>
+    <body onload="start()">
+        <div id="whole">
+        <div id="image">
+            <h1 id="caption1"></h1>
+            <h3 id="date">07/11/2014 E.C</h3>
+            <p id="po">IF friends are meant to protect each other and look after each other's needs, then we, you and i, my dears, qualify
+               to be the best friends in the whole world. <br>I love you.
+            </p>
+           <button onclick="start()" id="btn">Play again</button>
+          </div>
+        <audio controls id="audio">
+			
+			<source src="./what if.mp3" type="audio/mpeg">
+			Your browser does not support the audio tag.
+		  </audio>
+    </div>
+       <script>
+         function start(){
+
+          $("#po").hide();
+          $("#btn").hide();
+          // document.getElementById("Po").style.display="none";
+          var vid=document.getElementById("audio");
+          vid.play();
+          vid.loop = true;
+             var f1=setTimeout('document.getElementById("caption1").innerHTML="This video is dedicated to tsega, The birth day girl"',0);
+             var f2=setTimeout('document.getElementById("caption1").innerHTML="and also to Bethy, whose birth day has actually passed "',6000);
+             var f3=setTimeout('document.getElementById("caption1").innerHTML="But i was not able to express my wishes for...."',12000);
+            // // var last=setTimeout(',18000)
+             var f4=setTimeout('f1()',18000);
+             var f5=setTimeout('f2()',28000);
+            //  setTimeout("start()",20000)
+         }
+
+function f1(){
+ $("#po").fadeIn();
+  document.getElementById("caption1").innerHTML="";
+  // document.getElementById("image").style.background="url('./2.jpg')";
+  
+}
+function f2(){
+  $("#po").hide();
+  $("#btn").fadeIn();
+  var vid=document.getElementById("audio");
+ vid.pause();
+}
+function f3(){
+
+}
+function f4(){
+document.getElementById("caption1").innerHTML="This video is dedicated to tsega, The birth day girl"
+}
+  $(document).ready(function(){
+    // $("#caption1").fadeIn("slow");
+    $("#po").hide();
+    $("#btn").hide();
+  })
+
+       </script>
+    </body>
+</html>

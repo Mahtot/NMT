@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title> ajax-html</title>
+    </head>
+    <body>
+        <p>Hello</p>
+        <div class="serverInfo">
+            Server is running on <span data-replace="platform">???</span>
+            with Node <span data-replace="nodeVersion">???</span>. It has
+            been up for <span data-replace="uptime">???</span> seconds.
+            </div>
+            <script>
+                $(document).ready(function(){
+                    $('p').append("hello world from jquery");
+                })
+                function refreshServerInfo() {
+                const req = new XMLHttpRequest();
+                req.addEventListener('load', function() {
+                // TODO: put these values into HTML
+                console.log(this.responseText);
+                });
+                req.open('GET', 'http://localhost:7070', true);
+                req.send();
+                }
+                refreshServerInfo();
+               
+                </script>
+    </body>
+</html>

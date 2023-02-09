@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="/public/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet"  media="all" href="/public/css/loggedin.css">
+	
+
+	<link rel="stylesheet" type="text/css" media="only screen and (max-width: 991px)" href="/public/css/lessthan991.css" />
+	<link rel="stylesheet" type="text/css" media="only screen and (max-width: 767px)" href="/public/css/lessthan767.css" />
+	<script src="/public/jquery/jquery.js"></script>
+	<script src="/public/jquery/jquery.min.js"></script>
+	<script src="/public/bootstrap/js/bootstrap.js"></script>
+	<script src="/public/bootstrap/js/bootstrap.min.js"></script>
+	
+	<script src="/public/js/main.js"></script>
+	
+	
+	<title>
+		Admin page
+	</title>
+	<style>
+	
+	</style>
+</head>
+<body onload="hide()">
+<header style="padding-left: 0px;">
+  <div id="header-1">  <h1>NMT House Rental and Purchase</h1></div>
+    <div id="profile"><span id="arrow-dwn"><img src="/public/pics/profile.png" id="person"><img src="/public/pics/ar.png"></span>
+        <span id="arrow-up"><img src="/public/pics/profile.png" id="person"><img src="/public/pics/ar1.png" ></span></div>
+   <div id="contents">
+       <ul>
+           <li><a href="/public/profile.html">Profile</a></li>
+           <li><a href="/public/index.html">Sign out</a></li>
+           
+       </ul>
+   </div>
+</header>
+<div class="flex-container1">
+    <div id="flex-itemm">
+   <h1>Welcome, Mahtot!</h1>
+   <h4>What would you like to do?</h4>
+  <span id="link"> <a href="/public/putup.html">Post new house</a>
+   <a href="/public/modify.html">Modify existing</a>
+</span>
+</div>
+</div>
+
+
+
+<script>
+   
+    $(document).ready(function(){
+        $("#contents").hide()
+        $("#arrow-up").hide();
+        $("#profile").click(function(){
+            $("#contents").toggle();
+            $("#arU").show();
+            $("#arD").hide();
+            $(".flex-container1").click(function(){
+                $("#contents").hide()
+                $("#arrow-up").hide();
+            $("#arrow-dwn").show();
+            })
+            $("#header-1").click(function(){
+                $("#contents").hide()
+                $("#arrow-up").hide();
+            $("#arrow-dwn").show();
+            })
+
+        })
+        $("#arrow-dwn").click(function(){
+            $("#arrow-up").show();
+            $("#arrow-dwn").hide();
+            $("#arrow-up").click(function(){
+            $("#arrow-up").hide();
+            $("#arrow-dwn").show();
+        })
+        })
+       
+    })
+</script>
+</body>
+</html>

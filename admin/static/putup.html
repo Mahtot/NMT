@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="/public/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet"  media="all" href="/public/css/loggedin.css">
+	
+
+	<link rel="stylesheet" type="text/css" media="only screen and (max-width: 991px)" href="/public/css/lessthan991.css" />
+	<link rel="stylesheet" type="text/css" media="only screen and (max-width: 767px)" href="/public/css/lessthan767.css" />
+	<script src="/public/jquery/jquery.js"></script>
+	<script src="/public/jquery/jquery.min.js"></script>
+	<script src="/public/bootstrap/js/bootstrap.js"></script>
+	<script src="/public/bootstrap/js/bootstrap.min.js"></script>
+	
+	<script src="/public/js/main.js"></script>
+	
+	
+	<title>
+		Admin page
+	</title>
+	<style>
+	body{
+        background-color: whitesmoke;
+    }
+	</style>
+</head>
+<body onload="hide()">
+<header style="padding-left: 0px;">
+  <div id="header-1">  <h1>NMT House Rental and Purchase</h1></div>
+    <div id="profile"><span id="arrow-dwn"><img src="/public/pics/profile.png" id="person"><img src="/public/pics/ar.png"></span>
+        <span id="arrow-up"><img src="/public/pics/profile.png" id="person"><img src="/public/pics/ar1.png" ></span></div>
+   <div id="contents">
+       <ul>
+           <li><a href="/public/profile.html">Profile</a></li>
+           <li><a href="/public/index.html">Sign out</a></li>
+           
+       </ul>
+   </div>
+</header>
+<div class="flex-container3">
+    <div id="flex-item-post">
+   <h3>Put Up a House for a Sale or Rent</h3>
+   <form id="Post-house" class="for-big-device">
+       <table>
+          
+    <tr><td><label for>Add Picture:</label> </td> <td> <input type="image" name="picture" placeholder="picture-1"></td>
+        <td> <input type="image" name="picture" placeholder="picture-2"></td>
+        <td> <input type="image" name="picture" placeholder="picture-3"></td>
+        </tr>
+        <tr>
+        <td><label for>Rooms:</label> </td>
+        <td><input type="radio" name="rooms" value="single-room">&nbsp; Single Room</td>
+        <td><input type="radio" name="rooms" value="double-room">&nbsp; Double Room</td>
+        <td><input type="radio" name="rooms" value="whole-building">&nbsp; Whole Building</td>
+    </tr>
+    <tr>
+        <td><label for>Available for: </label></td>
+        <td><input type="radio" name="post-for" value="rent">&nbsp; Rent</td>
+       
+    <td><input type="radio" name="post-for" value="sale">&nbsp; Sale</td>
+<td></td>   
+
+</tr>
+
+    <tr>
+        <td><label for>Address:</label></td>
+        <td><select name="sub-city">
+            <option value="quiha">Quiha</option>
+            <option value="adihaki">Adihaki</option>
+            <option value="hadnet">Hadnet</option>
+            <option value="semen">Semen</option>
+            <option value="ayder">Ayder</option>
+            <option value="hawelti">Hawelti</option>
+            <option value="kedamayweyane">kedamay-weyane</option>
+        </select></td></tr>
+
+
+</table>
+  <span id="land-lord"><label for>Description:</label></span><textarea></textarea>
+ <div id="submitBtn">
+
+ <input type="submit" value="Post">
+ <input type="reset" value="Clear">
+</div>
+    
+   </form>
+   <form id="Post-house" class="for-small-device">
+    <table>
+       
+ <tr><td></td><td><label for>Add Picture:</label> </td><td></td></tr>
+ <tr><td> <input type="image" name="picture" placeholder="picture-1"></td>
+     <td> <input type="image" name="picture" placeholder="picture-2"></td>
+     <td> <input type="image" name="picture" placeholder="picture-3"></td>
+     </tr>
+     <tr>
+    <td></td> <td><label for>Rooms:</label> </td><td></td></tr>
+     <tr><td><input type="radio" name="rooms" value="single-room">&nbsp; Single Room</td>
+     <td><input type="radio" name="rooms" value="double-room">&nbsp; Double Room</td>
+     <td><input type="radio" name="rooms" value="whole-building">&nbsp; Whole Building</td>
+ </tr>
+ <tr>
+  <td></td>   <td><label for>Available for: </label></td><td></td></tr>
+  <tr><td><input type="radio" name="post-for" value="rent">&nbsp; Rent</td>
+    
+ <td><input type="radio" name="post-for" value="sale">&nbsp; Sale</td>
+<td></td>   
+
+</tr>
+
+ <tr>
+   <td></td> <td><label for>Address:</label></td><td></td></tr>
+    <tr><td></td><td><select name="sub-city">
+         <option value="quiha">Quiha</option>
+         <option value="adihaki">Adihaki</option>
+         <option value="hadnet">Hadnet</option>
+         <option value="semen">Semen</option>
+         <option value="ayder">Ayder</option>
+         <option value="hawelti">Hawelti</option>
+         <option value="kedamayweyane">kedamay-weyane</option>
+     </select></td>
+    <td></td></tr>
+
+
+</table>
+<span id="land-lord"><label for>Description:</label></span><br><textarea></textarea>
+<div id="submitBtn">
+
+<input type="submit" value="Post">
+<input type="reset" value="Clear">
+</div>
+ 
+</form>
+</div>
+</div>
+
+
+
+<script>
+   
+    $(document).ready(function(){
+        $("#contents").hide()
+        $("#arrow-up").hide();
+        $("#profile").click(function(){
+            $("#contents").toggle();
+            $("#arU").show();
+            $("#arD").hide();
+            $(".flex-container3").click(function(){
+                $("#contents").hide()
+                $("#arrow-up").hide();
+            $("#arrow-dwn").show();
+            })
+            $("#header-1").click(function(){
+                $("#contents").hide()
+                $("#arrow-up").hide();
+            $("#arrow-dwn").show();
+            })
+
+        })
+        $("#arrow-dwn").click(function(){
+            $("#arrow-up").show();
+            $("#arrow-dwn").hide();
+            $("#arrow-up").click(function(){
+            $("#arrow-up").hide();
+            $("#arrow-dwn").show();
+        })
+        })
+       
+    })
+</script>
+</body>
+</html>

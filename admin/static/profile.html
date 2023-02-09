@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="/public/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet"  media="all" href="/public/css/loggedin.css">
+	
+
+	<link rel="stylesheet" type="text/css" media="only screen and (max-width: 991px)" href="/public/css/lessthan991.css" />
+	<link rel="stylesheet" type="text/css" media="only screen and (max-width: 767px)" href="/public/css/lessthan767.css" />
+	<script src="/public/jquery/jquery.js"></script>
+	<script src="/public/jquery/jquery.min.js"></script>
+	<script src="/public/bootstrap/js/bootstrap.js"></script>
+	<script src="/public/bootstrap/js/bootstrap.min.js"></script>
+	
+	<script src="/public/js/main.js"></script>
+	
+	
+	<title>
+		Admin page
+	</title>
+	<style>
+	body{
+  background:url("/public/pics/047.jpg");
+  /* background:whitesmoke; */
+    }
+	</style>
+</head>
+<body onload="hide()" background="">
+<header style="padding-left: 0px;">
+  <div id="header-1">  <h1>NMT House Rental and Purchase</h1></div>
+    <div id="profile"><span id="arrow-dwn"><img src="/public/pics/profile.png" id="person"><img src="/public/pics/ar.png"></span>
+        <span id="arrow-up"><img src="/public/pics/profile.png" id="person"><img src="/public/pics/ar1.png" ></span></div>
+   <div id="contents">
+       <ul>
+           <li><a href="/public/profile.html">Profile</a></li>
+           <li><a href="/public/index.html">Sign out</a></li>
+           
+       </ul>
+   </div>
+</header>
+<div class="flex-container2">
+    <div class="flex-itemProfile">
+         <h3>Administrator</h3>
+      <form id="profileInfo" action="/jjj" name="myForm" onsubmit="return(validate());" method="POST" class="forBig">
+          <table id="bigTable">
+              <th></th>
+              <tr>
+                  <td> User name: </td>
+                  <td><input type="text" name="uname" id="uN" value="mahtot" required>
+                  <h6 id="errUn"></h6>
+                </td>
+                </tr>
+              <tr>
+                  <td> Email: </td>
+                  <td> <input type="email" name="email" id="uE" value="mahtotgher13@gmail.com" required>
+                  <h6 id="errE"></h6>
+            </td>
+                </tr>
+              <tr>
+                  <td>   Current password: </td>
+             <td><input type="password" name="oldPwd" id="oP" required>
+                <h6 id="errCp"></h6>
+            </td>
+             
+
+            </tr>
+                <tr> <td>New password:</td>
+                <td>  <input type="password" name="newPwd" id="nP" required>
+                <h6 id="errNp"></h6></td>
+    
+            </tr>
+                <tr>
+                    <td>Confirm new password:</td>
+                    <td>  <input type="password" name="confirmNewPwd" id="cNp" required>
+                    <h6 id="errCnp"></h6>
+</td>
+                </tr>
+           
+          </table>
+          <div id="profileBtn"> <button type="submit"><span id="btnU">Save changes</span></button>
+            <div id="cancel"><a href="/public/loggedin.html">Cancel</a>
+    
+        </div>
+    </div>  </form>
+    <form id="profileInfo" action="/jjj" name="myForm" onsubmit="return(validatee());" method="POST" class="forSmall">
+          <table id="smlTable">
+            <th></th>
+            <tr>
+                <td> User name: </td></tr>
+               <tr> <td><input type="text" name="uname" id="uNs" value="mahtot" required>
+                <h6 id="errUns"></h6>
+            </td> </tr>
+            <tr>
+                <td> Email: </td></tr>
+               <tr> <td><input type="email" name="email" id="uEs" value="mahtotgher13@gmail.com" required>
+                <h6 id="errEs"></h6>
+          </td>
+            </tr>
+            <tr>
+                <td>   Current password: </td></tr>
+          <tr><td><input type="password" name="oldPwd" id="oPs" required>
+            <h6 id="errCps"></h6>
+        </td>
+              </tr>
+              <tr> <td>New password:</td></tr>
+             <tr><td>  <input type="password" name="newPwd" id="nPs" required>
+                <h6 id="errNps"></h6></td>
+              <tr>
+                  <td>Confirm new password:</td></tr>
+                <tr><td>  <input type="password" name="confirmNewPwd" id="cNps" required>
+                    <h6 id="errCnps"></h6></td>
+              </tr>
+        </table>
+           <div id="profileBtn"> <button type="submit"><span id="btnU">Save changes</span></button>
+        <div id="cancel"><a href="/public/loggedin.html">Cancel</a>
+
+    </div>
+</div>  </form>
+<script>
+function validate(){
+   
+        const uName=document.getElementById("uN").value;
+        const uEmail=document.getElementById("uE").value;
+        const oldPwd=document.getElementById("oP").value;
+       
+	    const newPwd=document.getElementById("nP").value;
+        const confirmNewPwd=document.getElementById("cNp").value;
+        const matchName= /[^a-zA-Z]/ig;
+        const matchPwd=/(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?!.*[^a-zA-Z0-9])/g;
+        const tstOldPwd=matchPwd.test(oldPwd);
+        const tstUname=matchName.test(uName);
+        const tstNewPwd=matchPwd.test(newPwd);
+        const tstConfirmNewPwd=matchPwd.test(confirmNewPwd);
+        const sizeOldPwd=oldPwd.length;
+        
+        // const sizeNewPwd=newPWd.length;
+        const sizeConfirmNewPwd=confirmNewPwd.length;
+        const tempU=tstUname;
+        const tempOld=tstOldPwd;
+        // if(tempU===true && tempOld===false){
+        //        $('.flex-itemProfile').css=('height','630px');
+        //    }
+        if(tstUname===true){
+            document.getElementById("errUn").innerHTML="invalid character, must contain only letter!";
+           document.getElementById("uN").focus(); 
+           
+		   return false;
+        }
+        // else if(tstUname===false){
+        //     document.getElementById("errUn").innerHTML="correct";
+        //     return true;
+        // }
+        if(tstOldPwd===false){
+		   document.getElementById("errCp").innerHTML="invalid character";
+           document.getElementById("oP").focus(); 
+           
+		   return false;
+          }
+      
+           
+       
+       else if(tstNewPwd===false){
+		   document.getElementById("errNp").innerHTML="invalid character";
+           document.getElementById("nP").focus(); 
+		   return false;
+           }
+       else if(tstConfirmNewPwd===false){
+		   document.getElementById("errCnp").innerHTML="invalid character";
+           document.getElementById("cNp").focus(); 
+            return false;
+           }
+        if(sizeOldPwd<8 || sizeOldPwd>20) {
+            document.getElementById("errCp").innerHTML="Password must be less than 20 and greater than 8 long!";
+           document.getElementById("oP").focus(); 
+           return false;
+        }  
+        if(sizeConfirmNewPwd<8 || sizeConfirmNewPwd>20) {
+            document.getElementById("errCnp").innerHTML="Password must be less than 20 and greater than 8 long!";
+           document.getElementById("cNp").focus(); 
+           return false;
+        }
+        if(newPwd.length<8 || newPwd.length>20) {
+            document.getElementById("errNp").innerHTML="Password must be less than 20 and greater than 8 long!";
+           document.getElementById("nP").focus(); 
+           return false;
+        }   
+           
+   }
+   function validatee(){
+   
+   const uName=document.getElementById("uNs").value;
+   const uEmail=document.getElementById("uEs").value;
+   const oldPwd=document.getElementById("oPs").value;
+  
+   const newPwd=document.getElementById("nPs").value;
+   const confirmNewPwd=document.getElementById("cNps").value;
+   const matchName= /[^a-zA-Z]/ig;
+   const matchPwd=/(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?!.*[^a-zA-Z0-9])/g;
+   const tstOldPwd=matchPwd.test(oldPwd);
+   const tstUname=matchName.test(uName);
+   const tstNewPwd=matchPwd.test(newPwd);
+   const tstConfirmNewPwd=matchPwd.test(confirmNewPwd);
+   const sizeOldPwd=oldPwd.length;
+   
+   // const sizeNewPwd=newPWd.length;
+   const sizeConfirmNewPwd=confirmNewPwd.length;
+   if(tstUname===true){
+       document.getElementById("errUns").innerHTML="invalid character, must contain only letter!";
+      document.getElementById("uNs").focus(); 
+      
+      return false;
+       }
+   else if(tstOldPwd===false){
+      document.getElementById("errCps").innerHTML="invalid character";
+      document.getElementById("oPs").focus(); 
+      
+      return false;
+     }
+   else if(sizeOldPwd<8 || sizeOldPwd>20) {
+       document.getElementById("errCps").innerHTML="Password must be less than 20 and greater than 8 long!";
+      document.getElementById("oPs").focus(); 
+      return false;
+      }  
+   else if(tstNewPwd===false){
+      document.getElementById("errNps").innerHTML="invalid character";
+      document.getElementById("nPs").focus(); 
+      return false;
+      }
+   else if(newPwd.length<8 || newPwd.length>20) {
+       document.getElementById("errNps").innerHTML="Password must be less than 20 and greater than 8 long!";
+      document.getElementById("nPs").focus(); 
+      return false;
+     } 
+   else if(tstConfirmNewPwd===false){
+      document.getElementById("errCnps").innerHTML="invalid character";
+      document.getElementById("cNps").focus(); 
+       return false;
+      }
+  
+   else if(sizeConfirmNewPwd<8 || sizeConfirmNewPwd>20) {
+       document.getElementById("errCnps").innerHTML="Password must be less than 20 and greater than 8 long!";
+      document.getElementById("cNps").focus(); 
+      return false;
+      }
+    
+}
+    $(document).ready(function(){
+       
+        $("#contents").hide()
+        $("#arrow-up").hide();
+        $("#profile").click(function(){
+            $("#contents").toggle();
+            $("#arU").show();
+            $("#arD").hide();
+            $(".flex-container2").click(function(){
+                $("#contents").hide()
+                $("#arrow-up").hide();
+            $("#arrow-dwn").show();
+            })
+            $("#header-1").click(function(){
+                $("#contents").hide()
+                $("#arrow-up").hide();
+            $("#arrow-dwn").show();
+            })
+
+        })
+        $("#arrow-dwn").click(function(){
+            $("#arrow-up").show();
+            $("#arrow-dwn").hide();
+            $("#arrow-up").click(function(){
+            $("#arrow-up").hide();
+            $("#arrow-dwn").show();
+        })
+        })
+       
+    
+    
+})
+</script>
+</body>
+</html>
